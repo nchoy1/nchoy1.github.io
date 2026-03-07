@@ -1,113 +1,180 @@
 # nchoy1.github.io
-# Water Corporation Mock Citizen Portal (Twilio Demo)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Water Corporation | Customer Portal</title>
 
-This project is a **mock citizen portal** used to demonstrate how Twilio messaging can interact with a utility provider like Water Corporation.
+<style>
 
-The site simulates two key workflows:
+body{
+font-family: Arial, Helvetica, sans-serif;
+margin:0;
+background:#f4f7fa;
+color:#333;
+}
 
-1. Reporting a water outage
-2. Paying a water bill
+header{
+background:#0077c8;
+color:white;
+padding:20px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
 
-Citizens receive SMS messages that include a secure link which takes them to this portal.
+header h1{
+margin:0;
+font-size:24px;
+}
 
-The portal then logs the request and confirms the action.
+nav a{
+color:white;
+margin-left:25px;
+text-decoration:none;
+font-weight:500;
+}
 
----
+nav a:hover{
+text-decoration:underline;
+}
 
-# Architecture Overview
+.hero{
+background:url("https://images.unsplash.com/photo-1509395176047-4a66953fd231");
+background-size:cover;
+background-position:center;
+height:350px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+text-align:center;
+}
 
-Citizen receives SMS →
+.hero h2{
+font-size:42px;
+background:rgba(0,0,0,0.4);
+padding:20px 30px;
+border-radius:8px;
+}
 
-Twilio Messaging API →
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
 
-Secure link →
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
 
-Citizen Portal →
+.card{
+background:white;
+padding:30px;
+border-radius:8px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
 
-Backend event logging
+.card h3{
+margin-top:0;
+color:#0077c8;
+}
 
----
+.card p{
+font-size:14px;
+}
 
-# Install Instructions
+.card a{
+display:inline-block;
+margin-top:15px;
+padding:10px 15px;
+background:#0077c8;
+color:white;
+border-radius:5px;
+text-decoration:none;
+}
 
-### 1. Install Node
+.card a:hover{
+background:#005fa3;
+}
 
-Download Node.js if needed:
+footer{
+margin-top:60px;
+background:#003b5c;
+color:white;
+text-align:center;
+padding:25px;
+font-size:14px;
+}
 
-https://nodejs.org
+</style>
+</head>
 
----
+<body>
 
-### 2. Clone the repository
+<header>
+<h1>Water Corporation</h1>
 
-```
-git clone YOUR_REPO_URL
-cd watercorp-demo
-```
+<nav>
+<a href="index.html">Home</a>
+<a href="outages.html">Service Outages</a>
+<a href="report.html">Report a Problem</a>
+<a href="alerts.html">SMS Alerts</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
 
----
+<section class="hero">
+<h2>Supporting our communities with safe, reliable water</h2>
+</section>
 
-### 3. Install dependencies
+<div class="container">
 
-```
-npm install
-```
+<h2>Customer Services</h2>
 
----
+<div class="services">
 
-### 4. Start the server
+<div class="card">
+<h3>Check Service Outages</h3>
+<p>
+View current water service disruptions in your area and estimated restoration times.
+</p>
+<a href="outages.html">View Outages</a>
+</div>
 
-```
-node server.js
-```
+<div class="card">
+<h3>SMS Service Alerts</h3>
+<p>
+Sign up to receive real-time SMS updates about outages, maintenance, and service restoration.
+</p>
+<a href="alerts.html">Get SMS Alerts</a>
+</div>
 
----
+<div class="card">
+<h3>Report a Water Issue</h3>
+<p>
+Report leaks, pressure issues, or water quality concerns directly to our operations team.
+</p>
+<a href="report.html">Report Issue</a>
+</div>
 
-### 5. Open the portal
+<div class="card">
+<h3>Contact Support</h3>
+<p>
+Need help with your water service or account? Our support team is here to help.
+</p>
+<a href="contact.html">Contact Us</a>
+</div>
 
-Open browser:
+</div>
 
-```
-http://localhost:3000
-```
+</div>
 
----
+<footer>
+© 2026 Water Corporation | Mock Customer Portal Demo
+</footer>
 
-# Twilio Demo Example
-
-Example SMS:
-
-```
-Water outage detected in your area.
-
-Reply REPORT or visit:
-http://localhost:3000/report
-```
-
-Example Billing SMS:
-
-```
-Your Water Corporation bill is due tomorrow.
-
-Pay securely here:
-http://localhost:3000/pay
-```
-
----
-
-# Folder Structure
-
-```
-watercorp-demo
-│
-├── README.md
-├── package.json
-├── server.js
-│
-└── public
-    ├── index.html
-    ├── report.html
-    ├── pay.html
-    ├── success.html
-    └── styles.css
-```
+</body>
+</html>
