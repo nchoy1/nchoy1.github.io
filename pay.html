@@ -23,31 +23,47 @@ analytics.page();
 </script>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Pay Water Bill</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay Water Bill</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Matches site CSS -->
 </head>
-
 <body>
+    <!-- Header / Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="outages.html">Outages</a></li>
+                <li><a href="alerts.html">Alerts</a></li>
+                <li><a href="report.html">Report</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="paybill.html" class="active">Pay Water Bill</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<h2>Water Bill Payment</h2>
+    <!-- Main Content -->
+    <main>
+        <section class="page-content">
+            <h1>Pay Your Water Bill</h1>
+            <p>To pay your water bill, please follow the instructions below:</p>
+            <ol>
+                <li>Visit the official WaterCorp payment portal:</li>
+                <li><a href="https://www.watercorporation.com.au/pay" target="_blank" rel="noopener">Pay Your Bill Online</a></li>
+                <li>Enter your account number and payment details.</li>
+                <li>Submit your payment and save the receipt for your records.</li>
+            </ol>
 
-<form action="/pay-bill" method="POST">
+            <p>If you need assistance, please <a href="contact.html">contact our support team</a>.</p>
+        </section>
+    </main>
 
-<label>Phone Number</label><br>
-<input type="text" name="phone" required>
-
-<br><br>
-
-<label>Amount</label><br>
-<input type="text" name="amount">
-
-<br><br>
-
-<button type="submit">Submit Payment</button>
-
-</form>
-
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 WaterCorp. All rights reserved.</p>
+    </footer>
 </body>
 </html>
