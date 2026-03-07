@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Water Corporation | SMS Alerts</title>
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background:#f4f7fa;
+}
+
+header{
+background:#0077c8;
+color:white;
+padding:20px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+}
+
+.container{
+max-width:600px;
+margin:auto;
+padding:40px 20px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:8px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+input{
+width:100%;
+padding:12px;
+margin-top:10px;
+margin-bottom:20px;
+}
+
+button{
+padding:12px 20px;
+background:#0077c8;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#005fa3;
+}
+
+footer{
+margin-top:60px;
+background:#003b5c;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h2>Water Corporation</h2>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="outages.html">Service Outages</a>
+<a href="alerts.html">SMS Alerts</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h1>Subscribe to SMS Alerts</h1>
+
+<p>
+Receive real-time SMS notifications about service outages, maintenance, and restoration updates.
+</p>
+
+<label>Phone Number</label>
+<input id="phone" placeholder="+61XXXXXXXXX">
+
+<button onclick="subscribe()">Subscribe</button>
+
+<p id="response"></p>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Water Corporation Demo Portal
+</footer>
+
+<script>
+
+function subscribe(){
+
+const phone = document.getElementById("phone").value;
+
+document.getElementById("response").innerHTML =
+"Thank you. You will now receive service notifications.";
+
+}
+
+</script>
+
+</body>
+</html>
