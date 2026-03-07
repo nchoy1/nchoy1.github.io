@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Water Corporation | Contact</title>
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background:#f4f7fa;
+}
+
+header{
+background:#0077c8;
+color:white;
+padding:20px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+padding:40px 20px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:8px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+input, textarea{
+width:100%;
+padding:12px;
+margin-top:10px;
+margin-bottom:20px;
+}
+
+button{
+padding:12px 20px;
+background:#0077c8;
+color:white;
+border:none;
+border-radius:5px;
+}
+
+footer{
+margin-top:60px;
+background:#003b5c;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h2>Water Corporation</h2>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="outages.html">Service Outages</a>
+<a href="alerts.html">SMS Alerts</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h1>Contact Support</h1>
+
+<p>
+If you are experiencing a water service issue or need assistance, please contact our support team.
+</p>
+
+<label>Name</label>
+<input placeholder="Your Name">
+
+<label>Email</label>
+<input placeholder="Your Email">
+
+<label>Message</label>
+<textarea rows="5"></textarea>
+
+<button>Submit</button>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Water Corporation Demo Portal
+</footer>
+
+</body>
+</html>
