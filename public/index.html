@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Water Corporation Customer Portal</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 40px;
+      background: #f2f6f9;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #0077c8;
+    }
+
+    button {
+      padding: 12px 20px;
+      background: #0077c8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #005fa3;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Water Corporation Service Alert</h1>
+
+<p>
+Check if your property is affected by a service outage.
+</p>
+
+<label>Enter your phone number:</label>
+
+<input type="text" id="phone" placeholder="+61XXXXXXXXX">
+
+<button onclick="submitAlert()">
+Notify Me
+</button>
+
+<p id="response"></p>
+
+</div>
+
+<script>
+
+function submitAlert(){
+
+  const phone = document.getElementById("phone").value;
+
+  document.getElementById("response").innerHTML =
+  "Thanks! We'll notify you of service updates.";
+
+  fetch("/api/alert", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({phone})
+  });
+
+}
+
+</script>
+
+</body>
+</html>
