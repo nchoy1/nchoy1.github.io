@@ -1,4 +1,32 @@
 <script>
+
+function subscribe(){
+
+const phone = document.getElementById("phone").value
+
+document.getElementById("response").innerHTML =
+"Thank you. You are now subscribed to outage alerts."
+
+if(window.analytics){
+
+analytics.identify(phone,{
+phone: phone,
+subscription: "Water Outage Alerts"
+})
+
+analytics.track("Alert Subscribed",{
+phone: phone,
+service: "Water Outage Notifications",
+channel: "SMS"
+})
+
+}
+
+}
+
+</script>
+
+<script>
 !function(){var analytics=window.analytics=window.analytics||[];
 if(!analytics.initialize)
 if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");
@@ -22,27 +50,7 @@ analytics.page();
 }}();
 </script>
 
-<script>
 
-function subscribe(){
-
-const phone = document.getElementById("phone").value;
-
-analytics.identify(phone, {
-phone: phone
-});
-
-analytics.track("SMS Alert Subscribed", {
-phone: phone,
-service: "Water Outage Notifications"
-});
-
-document.getElementById("response").innerHTML =
-"Thank you. You will now receive service notifications.";
-
-}
-
-</script>
 
 <!DOCTYPE html>
 <html>
