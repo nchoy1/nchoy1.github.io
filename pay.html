@@ -24,41 +24,17 @@ analytics.page();
 
 <!DOCTYPE html>
 <html lang="en">
-<script>
-!function(){var analytics=window.analytics=window.analytics||[];
-if(!analytics.initialize)
-if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");
-else{
-analytics.invoked=!0;
-analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","page","identify","reset","group","track","ready","alias","debug","pageview"];
-analytics.factory=function(t){return function(){
-var e=Array.prototype.slice.call(arguments);
-e.unshift(t);analytics.push(e);return analytics}};
-for(var t=0;t<analytics.methods.length;t++){
-var e=analytics.methods[t];
-analytics[e]=analytics.factory(e)}
-analytics.load=function(t){
-var e=document.createElement("script");
-e.type="text/javascript";e.async=!0;
-e.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";
-var n=document.getElementsByTagName("script")[0];
-n.parentNode.insertBefore(e,n)};
-analytics.load("8vpzBre2USxkC7r5Ij83V1FbZwccb4M0");
-analytics.page();
-}}();
-</script>
-
-<!DOCTYPE html>
-<html>
 <head>
-<title>Water Corporation | Contact</title>
+<meta charset="UTF-8">
+<title>Water Corporation | Pay Water Bill</title>
 
 <style>
 
 body{
-font-family: Arial;
+font-family: Arial, Helvetica, sans-serif;
 margin:0;
 background:#f4f7fa;
+color:#333;
 }
 
 header{
@@ -70,10 +46,19 @@ justify-content:space-between;
 align-items:center;
 }
 
+header h2{
+margin:0;
+}
+
 nav a{
 color:white;
-margin-left:20px;
+margin-left:25px;
 text-decoration:none;
+font-weight:500;
+}
+
+nav a:hover{
+text-decoration:underline;
 }
 
 .container{
@@ -89,11 +74,18 @@ border-radius:8px;
 box-shadow:0 3px 10px rgba(0,0,0,0.1);
 }
 
-input, textarea{
+.card h1{
+color:#0077c8;
+margin-top:0;
+}
+
+input{
 width:100%;
 padding:12px;
 margin-top:10px;
 margin-bottom:20px;
+border:1px solid #ccc;
+border-radius:5px;
 }
 
 button{
@@ -102,6 +94,11 @@ background:#0077c8;
 color:white;
 border:none;
 border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#005fa3;
 }
 
 footer{
@@ -110,6 +107,7 @@ background:#003b5c;
 color:white;
 text-align:center;
 padding:25px;
+font-size:14px;
 }
 
 </style>
@@ -125,32 +123,66 @@ padding:25px;
 <a href="index.html">Home</a>
 <a href="outages.html">Service Outages</a>
 <a href="alerts.html">SMS Alerts</a>
+<a href="paybill.html">Pay Bill</a>
 <a href="contact.html">Contact</a>
 </nav>
 
-    <div class="container">
+</header>
+
+<div class="container">
 
 <div class="card">
-    <!-- Main Content -->
-    <main>
-        <section class="page-content">
-            <h1>Pay Your Water Bill</h1>
-            <p>To pay your water bill, please follow the instructions below:</p>
-            <ol>
-                <li>Visit the official WaterCorp payment portal:</li>
-                <li><a href="https://www.watercorporation.com.au/pay" target="_blank" rel="noopener">Pay Your Bill Online</a></li>
-                <li>Enter your account number and payment details.</li>
-                <li>Submit your payment and save the receipt for your records.</li>
-            </ol>
 
-            <p>If you need assistance, please <a href="contact.html">contact our support team</a>.</p>
-        </section>
-    </main>
+<h1>Pay Your Water Bill</h1>
+
+<p>
+Securely pay your Water Corporation bill online.
+</p>
+
+<label>Account Number</label>
+<input id="account" placeholder="Enter your account number">
+
+<label>Payment Amount</label>
+<input id="amount" placeholder="$">
+
+<label>Phone Number (for payment confirmation)</label>
+<input id="phone" placeholder="+61XXXXXXXXX">
+
+<button onclick="payBill()">Submit Payment</button>
+
+<p id="response"></p>
+
 </div>
-    </div>
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 WaterCorp. All rights reserved.</p>
-    </footer>
+
+</div>
+
+<footer>
+© 2026 Water Corporation | Mock Customer Portal Demo
+</footer>
+
+<script>
+
+function payBill(){
+
+const phone = document.getElementById("phone").value
+const amount = document.getElementById("amount").value
+
+document.getElementById("response").innerHTML =
+"Payment successful. A confirmation message will be sent."
+
+if(window.analytics){
+
+analytics.track("Bill Paid",{
+amount: amount,
+phone: phone,
+service: "Water Payment"
+})
+
+}
+
+}
+
+</script>
+
 </body>
 </html>
