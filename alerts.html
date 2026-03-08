@@ -22,6 +22,28 @@ analytics.page();
 }}();
 </script>
 
+<script>
+
+function subscribe(){
+
+const phone = document.getElementById("phone").value;
+
+analytics.identify(phone, {
+phone: phone
+});
+
+analytics.track("SMS Alert Subscribed", {
+phone: phone,
+service: "Water Outage Notifications"
+});
+
+document.getElementById("response").innerHTML =
+"Thank you. You will now receive service notifications.";
+
+}
+
+</script>
+
 <!DOCTYPE html>
 <html>
 <head>
